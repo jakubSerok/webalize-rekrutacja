@@ -1,0 +1,28 @@
+{
+  "nav": {
+    "home": "Home",
+    "news": "Blog",
+    "faq": "FAQ",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Webalize - Home",
+    "welcome": "Welcome to the homepage",
+    "latest_articles": "Latest articles"
+  },
+  "news": {
+    "title": "Blog / News",
+    "all_articles": "All articles",
+    "category": "Category",
+    "date": "Date",
+    "no_articles": "No articles to display"
+  },
+  "faq": {
+    "title": "FAQ - Frequently Asked Questions",
+    "no_faq": "No FAQ to display"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred"
+  }
+}
