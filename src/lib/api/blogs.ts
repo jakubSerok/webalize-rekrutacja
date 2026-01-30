@@ -1,4 +1,5 @@
 import { getPayloadClient } from '../payload';
+import type { Where } from 'payload/types';
  
 export interface Blog {
   id: string;
@@ -9,7 +10,18 @@ export interface Blog {
   category: string;
   publishedAt: string;
   featured?: boolean;
-  image?: any;
+  image?: {
+    id: string;
+    alt: string;
+    url: string;
+    width: number;
+    height: number;
+    filename: string;
+    mimeType: string;
+    filesize: number;
+    createdAt: string;
+    updatedAt: string;
+  };
 }
  
 export interface BlogListOptions {
@@ -31,7 +43,7 @@ export const getBlogs = async (options: BlogListOptions = {}) => {
     sort = '-publishedAt'
   } = options;
  
-  const where: any = {};
+  const where: Where = {};
  
   if (category) {
     where.category = { equals: category };

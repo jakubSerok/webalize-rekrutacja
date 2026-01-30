@@ -18,7 +18,7 @@ export const getFAQs = async (options: FAQListOptions = {}) => {
  
   const { category, limit } = options;
  
-  const where: any = {};
+  const where: { category?: { equals: string } } = {};
  
   if (category) {
     where.category = { equals: category };
