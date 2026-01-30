@@ -1,0 +1,28 @@
+{
+  "nav": {
+    "home": "Strona główna",
+    "news": "Blog",
+    "faq": "FAQ",
+    "contact": "Kontakt"
+  },
+  "home": {
+    "title": "Webalize - Strona Główna",
+    "welcome": "Witaj na stronie głównej",
+    "latest_articles": "Ostatnie artykuły"
+  },
+  "news": {
+    "title": "Blog / News",
+    "all_articles": "Wszystkie artykuły",
+    "category": "Kategoria",
+    "date": "Data",
+    "no_articles": "Brak artykułów do wyświetlenia"
+  },
+  "faq": {
+    "title": "FAQ - Najczęściej Zadawane Pytania",
+    "no_faq": "Brak FAQ do wyświetlenia"
+  },
+  "common": {
+    "loading": "Ładowanie...",
+    "error": "Wystąpił błąd"
+  }
+}
