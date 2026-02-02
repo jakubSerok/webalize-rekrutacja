@@ -3,7 +3,9 @@
     "home": "Home",
     "news": "Blog",
     "faq": "FAQ",
-    "contact": "Contact"
+    "contact": "Contact",
+    "categories": "Categories",
+    "language": "Language"
   },
   "home": {
     "title": "Webalize - Home",

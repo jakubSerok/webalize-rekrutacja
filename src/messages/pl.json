@@ -3,7 +3,9 @@
     "home": "Strona główna",
     "news": "Blog",
     "faq": "FAQ",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "categories": "Kategorie",
+    "language": "Język"
   },
   "home": {
     "title": "Webalize - Strona Główna",
