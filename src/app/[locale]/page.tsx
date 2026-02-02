@@ -1,42 +1,25 @@
-import { getPayloadClient } from '../../lib/payload';
+import { BlogList } from '../../components/server';
+import { getTranslations } from 'next-intl/server';
 
-interface Blog {
-  id: string;
-  title: string;
-  excerpt?: string;
+interface HomePageProps {
+  params: Promise<{
+    locale: string;
+  }>;
 }
 
-const HomePage = async () => {
-  const payload = await getPayloadClient();
-
-  const blogs = await payload.find({
-    collection: 'blogs',
-    limit: 3,
-    where: {
-      featured: {
-        equals: true,
-      },
-    },
-  });
+const HomePage = async ({ params }: HomePageProps) => {
+  const { locale } = await params;
+  const t = await getTranslations({ locale });
 
   return (
     <div>
-      <h1>Webalize - Strona Główna</h1>
-      <p>Witaj na stronie głównej</p>
+      <h1>{t('home.title')}</h1>
+      <p>{t('home.welcome')}</p>
 
-      {blogs.docs.length > 0 && (
-        <section>
-          <h2>Ostatnie artykuły</h2>
-          <ul>
-            {(blogs.docs as Blog[]).map((blog: Blog) => (
-              <li key={blog.id}>
-                <h3>{blog.title}</h3>
-                <p>{blog.excerpt}</p>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
+      <section>
+        <h2>{t('home.latest_articles')}</h2>
+        <BlogList options={{ limit: 3, featured: true }} />
+      </section>
     </div>
   );
 };
