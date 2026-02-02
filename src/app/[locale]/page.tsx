@@ -18,7 +18,7 @@ const HomePage = async ({ params }: HomePageProps) => {
 
       <section>
         <h2>{t('home.latest_articles')}</h2>
-        <BlogList options={{ limit: 3, featured: true }} />
+        <BlogList options={{ limit: 3, featured: true }} locale={locale} />
       </section>
     </div>
   );

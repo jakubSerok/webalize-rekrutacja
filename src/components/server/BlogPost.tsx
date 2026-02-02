@@ -4,9 +4,14 @@ import { notFound } from 'next/navigation';
 interface BlogPostProps {
   slug: string;
   className?: string;
+  locale?: string;
 }
 
-export const BlogPost = async ({ slug, className }: BlogPostProps) => {
+export const BlogPost = async ({
+  slug,
+  className,
+  locale = 'pl',
+}: BlogPostProps) => {
   const blog = await getBlogBySlug(slug);
 
   if (!blog) {
@@ -32,6 +37,21 @@ export const BlogPost = async ({ slug, className }: BlogPostProps) => {
       <main>
         <div>{blog.content}</div>
       </main>
+
+      <footer
+        style={{
+          marginTop: '2rem',
+          paddingTop: '1rem',
+          borderTop: '1px solid #ddd',
+        }}
+      >
+        <a
+          href={`/${locale}/news`}
+          style={{ color: '#0070f3', textDecoration: 'none' }}
+        >
+          ← Wróć do listy artykułów
+        </a>
+      </footer>
     </article>
   );
 };

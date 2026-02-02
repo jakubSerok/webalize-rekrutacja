@@ -3,9 +3,14 @@ import { getBlogs, BlogListOptions, Blog } from '../../lib/api/blogs';
 interface BlogListProps {
   options?: BlogListOptions;
   className?: string;
+  locale?: string;
 }
 
-export const BlogList = async ({ options, className }: BlogListProps) => {
+export const BlogList = async ({
+  options,
+  className,
+  locale = 'pl',
+}: BlogListProps) => {
   const blogs = await getBlogs(options);
 
   if (!blogs.docs.length) {
@@ -24,7 +29,17 @@ export const BlogList = async ({ options, className }: BlogListProps) => {
             borderRadius: '8px',
           }}
         >
-          <h2>{blog.title}</h2>
+          <h2>
+            <a
+              href={`/${locale}/news/${blog.slug}`}
+              style={{
+                textDecoration: 'none',
+                color: '#333',
+              }}
+            >
+              {blog.title}
+            </a>
+          </h2>
           <div
             style={{
               fontSize: '0.9rem',
@@ -40,6 +55,16 @@ export const BlogList = async ({ options, className }: BlogListProps) => {
             )}
           </div>
           {blog.excerpt && <p>{blog.excerpt}</p>}
+          <a
+            href={`/${locale}/news/${blog.slug}`}
+            style={{
+              color: '#0070f3',
+              textDecoration: 'none',
+              fontWeight: 'bold',
+            }}
+          >
+            Czytaj więcej →
+          </a>
         </article>
       ))}
     </div>
