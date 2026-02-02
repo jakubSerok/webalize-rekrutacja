@@ -14,7 +14,7 @@ const BlogPostPage = async ({ params }: BlogPageProps) => {
 
   return (
     <div>
-      <BlogPost slug={slug} />
+      <BlogPost slug={slug} locale={locale} />
     </div>
   );
 };
